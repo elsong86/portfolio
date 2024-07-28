@@ -2,27 +2,28 @@ import React from 'react';
 import Link from 'next/link';
 
 const Header: React.FC = () => {
+    const links = [
+        { path: '/', text: 'Home' },
+        { path: '/projects', text: 'Projects' },
+        { path: '/resume', text: 'Resume' },
+        { path: '/blog', text: 'Blog' },
+        { path: '/publications', text: 'Publications' },
+        { path: '/contact', text: 'Contact' },
+    ];
+    
     return (
-        <header>
-            <nav>
-                <div>
-                    <Link href="/">Home</Link>
-                </div>
-                <div>
-                    <Link href="/blog">Blog</Link>
-                </div>
-                <div>
-                    <Link href="/projects">Projects</Link>
-                </div>
-                <div>
-                    <Link href="/resume">Resume</Link>
-                </div>
-                <div>
-                    <Link href="/contact">Contact</Link>
-                </div>
-                </nav>
+        <header className="bg-gray-800 text-white p-4">
+          <nav className="flex justify-around">
+            {links.map((link, index) => (
+              <div key={index}>
+                <Link key={index} href={link.path} className="hover:underline">
+                    {link.text}
+                </Link>
+              </div>
+            ))}
+          </nav>
         </header>
-    )
+      );
 }
 
 export default Header; 
