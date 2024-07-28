@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:css": "stylelint '**/*.css'"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
@@ -21,6 +22,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8.4.40",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-tailwindcss": "^0.0.7",
     "tailwindcss": "^3.4.7",
     "typescript": "^5"
   }
