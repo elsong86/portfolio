@@ -1,35 +1,21 @@
 // app/components/Header.tsx
 import React from 'react';
+import Navbar from './Navbar'; // Import the Navbar component
+import Connect from './Connect'; // Import the Connect component
 
 interface HeaderProps {
   name: string;
   title: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ name, title }) => {
+const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="bg-gray-800 text-white p-6 text-center sticky top-0 z-50">
-      <h1 className="text-4xl font-bold">{name}</h1>
-      <p className="text-xl mt-2">{title}</p>
-      
-      {/* Navigation Links */}
-      <nav className="mt-4">
-        <a href="#aboutme" className='text-blue-400 mx-4'>
-          About Me
-        </a>
-        <a href="#projects" className="text-blue-400 mx-4">
-          Projects
-        </a>
-        <a href="#experience" className="text-blue-400 mx-4">
-          Experience
-        </a>
-        <a href="#skills" className="text-blue-400 mx-4">
-          Skills
-        </a>
-        <a href="#blog" className="text-blue-400 mx-4">
-          Blog
-        </a>
-      </nav>
+    <header className="bg-transparent text-white py-4 fixed top-0 w-full z-50 flex justify-center items-center space-x-8">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Connect Accordion */}
+      <Connect />
     </header>
   );
 };

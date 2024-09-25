@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['cdn-images-1.medium.com'], // Allow images from Medium's CDN
+    },
+  };
+  
+  export default nextConfig;
+  
