@@ -1,24 +1,42 @@
 // app/components/Skills.tsx
 import React from 'react';
+import Image from 'next/image';
 import {
     Card,
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
-  
+} from "@/components/ui/card";
+
+// List of skills categories with SVG paths from the public folder
 const skills = [
   {
     category: 'Frontend',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'TypeScript'],
+    skills: [
+      { name: 'React', icon: '/icons/react.svg' },
+      { name: 'Next.js', icon: '/icons/nextjs.svg' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg' },
+      { name: 'JavaScript', icon: '/icons/javascript.svg' },
+      { name: 'TypeScript', icon: '/icons/typescript.svg' }
+    ],
   },
   {
     category: 'Backend',
-    skills: ['Node.js', 'Express.js', 'Go', 'Python', 'FastAPI'],
+    skills: [
+      { name: 'Node.js', icon: '/icons/nodejs.svg' },
+      { name: 'Express.js', icon: '/icons/express.svg' },
+      { name: 'Go', icon: '/icons/go.svg' },
+      { name: 'Python', icon: '/icons/python.svg' },
+      { name: 'FastAPI', icon: '/icons/fastapi.svg' }
+    ],
   },
   {
     category: 'DevOps',
-    skills: ['Docker', 'AWS', 'CI/CD', 'GitHub Actions', 'Kubernetes'],
+    skills: [
+      { name: 'Docker', icon: '/icons/docker.svg' },
+      { name: 'AWS', icon: '/icons/aws.svg' },
+      { name: 'GitHub', icon: '/icons/github.svg' },
+    ],
   },
 ];
 
@@ -30,14 +48,22 @@ const Skills: React.FC = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((skillCategory, index) => (
             <Card key={index} className="shadow-lg">
-              <CardHeader>
-                <CardTitle>{skillCategory.category}</CardTitle>
+              <CardHeader className="flex flex-col items-center">
+                <CardTitle className="text-xl font-bold">{skillCategory.category}</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc pl-5">
+                <ul className="space-y-4">
                   {skillCategory.skills.map((skill, i) => (
-                    <li key={i} className="text-gray-700">
-                      {skill}
+                    <li key={i} className="flex items-center text-gray-700 group">
+                      {/* Use Next.js Image component for SVGs */}
+                      <Image
+                        src={skill.icon}
+                        alt={`${skill.name} logo`}
+                        width={24}  // Set desired width
+                        height={24} // Set desired height
+                        className="mr-2 group-hover:animate-spin transition-transform duration-300"
+                      />
+                      {skill.name}
                     </li>
                   ))}
                 </ul>
