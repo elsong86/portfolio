@@ -1,6 +1,5 @@
-// app/layout.tsx
 import './globals.css';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 export const metadata = {
@@ -23,8 +22,10 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        {/* Sticky Header */}
-        <Header name="Ellis Song" title="Full Stack Developer" />
+        {/* Sticky and Centered Navbar */}
+        <header className="sticky top-0 z-50 w-full bg-white flex justify-center">
+          <Navbar />
+        </header>
 
         {/* Main content takes up all available space */}
         <main className="flex-1">{children}</main>

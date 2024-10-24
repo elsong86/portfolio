@@ -1,4 +1,3 @@
-// app/components/Navbar.tsx
 import React from 'react';
 import {
   NavigationMenu,
@@ -12,28 +11,43 @@ const Navbar: React.FC = () => {
     <NavigationMenu>
       <NavigationMenuList className="flex space-x-4">
         <NavigationMenuItem>
-          <NavigationMenuLink href="#aboutme" className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20">
-            About Me
+          <NavigationMenuLink
+            href="#aboutme"
+            className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Intro
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="#projects" className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20">
+          <NavigationMenuLink
+            href="#projects"
+            className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
             Projects
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="#experience" className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20">
-            Experience
+          <NavigationMenuLink
+            href="#skills"
+            className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Toolkit
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="#skills" className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20">
-            Skills
+          <NavigationMenuLink
+            href="#experience"
+            className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            About Me
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="#blog" className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20">
-            Blog
+          <NavigationMenuLink
+            href="#blog"
+            className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Posts
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

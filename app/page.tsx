@@ -1,10 +1,10 @@
 // app/page.tsx
 
-import AboutMe from './components/AboutMe';
-import Experience from './components/Experience';
-import ProjectsCarousel from './components/ProjectsCarousel';
-import Skills from './components/Skills';
+import AboutMe from './components/Intro';
+import Experience from './components/AboutMe';
+import Skills from './components/Toolkit';
 import Blog from './components/Blog';
+import Projects from './components/Projects';
 
 // Helper function to extract the first image URL from the description
 const extractImageFromDescription = (description: string): string | null => {
@@ -61,8 +61,8 @@ export default async function Home() {
   return (
     <main className="p-8">
       <AboutMe />
+      <Projects />
       <Skills />
-      <ProjectsCarousel /> 
       <Experience />
       <Blog articles={articles} /> {/* Pass the articles as a prop */}
     </main>
