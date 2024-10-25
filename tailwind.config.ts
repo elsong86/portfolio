@@ -29,6 +29,16 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      keyframes: {
+        settle: {
+          '0%': { transform: 'translateY(-100%)' },
+          '80%': { transform: 'translateY(10%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        settle: 'settle 1s ease-out',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")], // Tailwind CSS animate plugin
