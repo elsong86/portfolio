@@ -1,8 +1,6 @@
-// app/page.tsx
-
-import AboutMe from './components/Intro';
-import Experience from './components/AboutMe';
-import Skills from './components/Toolkit';
+import Intro from './components/Intro';
+import AboutMe from './components/AboutMe';
+import Toolkit from './components/Toolkit';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 
@@ -27,7 +25,6 @@ interface MediumRSSItem {
   description: string;
   thumbnail?: string;
 }
-
 
 async function fetchMediumPosts(): Promise<MediumPost[]> {
   try {
@@ -54,17 +51,16 @@ async function fetchMediumPosts(): Promise<MediumPost[]> {
   }
 }
 
-
 export default async function Home() {
   const articles = await fetchMediumPosts(); // Fetch articles in the server component
 
   return (
     <main className="p-8">
-      <AboutMe />
+      <Intro />
       <Projects />
-      <Skills />
-      <Experience />
-      <Blog articles={articles} /> {/* Pass the articles as a prop */}
+      <Toolkit />
+      <AboutMe />
+      <Blog articles={articles} /> 
     </main>
   );
 }
