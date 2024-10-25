@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       <NavigationMenuList className="flex space-x-4">
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#aboutme"
+            href="#intro"
             className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             Intro
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#skills"
+            href="#toolkit"
             className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             Toolkit
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#experience"
+            href="#aboutme"
             className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             About Me
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
             href="#blog"
             className="p-2 rounded-full text-black hover:bg-white hover:bg-opacity-20 hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Posts
+            Blog
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

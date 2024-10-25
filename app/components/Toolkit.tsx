@@ -26,10 +26,10 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-32 bg-gray-100 text-gray-900">
+    <section id="toolkit" className="py-32 bg-secondary text-gray-900">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-10">My Toolkit</h2>
-        <Card className="shadow-lg p-6"> {/* Added padding inside the card */}
+        <Card className="shadow-lg p-6 bg-white"> {/* Added padding inside the card */}
           <CardContent>
             <ul className="grid grid-cols-2 md:grid-cols-3 gap-8"> {/* Adjusted grid gap for equal spacing */}
               {skills.map((skill, index) => (
