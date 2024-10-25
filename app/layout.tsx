@@ -1,19 +1,11 @@
-// app/layout.tsx
 import './globals.css';
-import { DM_Sans } from 'next/font/google'; // Import the fonts from next/font/google
-import { Metadata } from 'next';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'My Portfolio',
   description: 'Portfolio of Ellis Song',
 };
-
-// Use the imported fonts
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700'], // Regular 400, Medium 500, Bold 700
-});
-
 
 export default function RootLayout({
   children,
@@ -21,16 +13,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={dmSans.className}> {/* Apply the Inter font globally */}
+    <html lang="en">
       <head>
-        {/* Other head elements like the Devicon CDN */}
+        {/* Add the Devicon CDN link in the head */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
         />
       </head>
-      <body className="font-light"> {/* Apply the Pacifico font in specific areas */}
-        {children}
+      <body className="flex flex-col min-h-screen bg-white">
+        {/* Sticky and Centered Navbar */}
+        <header className="sticky top-0 z-50 w-full bg-white flex justify-center">
+          <Navbar />
+        </header>
+        {/* Main content takes up all available space */}
+        <main className="flex-1">{children}</main>
+        {/* Footer is at the bottom */}
+        <Footer />
       </body>
     </html>
   );

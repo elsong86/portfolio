@@ -41,7 +41,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, image, github, live })
               GitHub
             </a>
           </Button>
-
           <Button asChild className="bg-transparent text-black border border-black hover:bg-black hover:text-white transition-all text-xl">
             <a
               href={live}
