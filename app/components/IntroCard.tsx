@@ -1,9 +1,8 @@
-// IntroCard.tsx
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Hurricane } from 'next/font/google';
-import { useInView } from "../../hooks/InView";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const hurricane = Hurricane({
   subsets: ['latin'],
@@ -12,63 +11,75 @@ const hurricane = Hurricane({
 });
 
 const IntroCard: React.FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const visibility = useInView(ref);
+  // Hook to control animations based on scroll position
+  const controls = useAnimation();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true }); // Trigger animation once
 
-  // Adjusted translateY calculation for a more pronounced effect
-  const translateY = (100 - visibility) * 1.5; // Multiplier increased to make movement more drastic
+  // Trigger animations when in view
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+    } else {
+      controls.start({ opacity: 0, y: 100 }); // Starting state
+    }
+  }, [isInView, controls]);
 
   return (
-    <Card
+    <motion.div
       ref={ref}
-      className="bg-white rounded-lg shadow-lg p-8 max-w-full mx-auto transition-transform duration-500" // Increased duration
-      style={{
-        transform: `translateY(${translateY}px)`, // Apply larger calculated translation
-        opacity: visibility > 20 ? 1 : 0, // Fade in as visibility increases
-      }}
+      animate={controls}
+      initial={{ opacity: 0, y: 100 }} // Initial state
+      className="bg-white rounded-lg shadow-lg p-8 max-w-full mx-auto"
     >
-      <div className="relative flex flex-col items-center">
-        <Image
-          src="/profile.jpg"
-          alt="Profile picture"
-          width={400}
-          height={400}
-          className="w-full h-auto"
-        />
-        <p className={`mt-3 text-6xl ${hurricane.className}`}>
-          Ellis Song
-        </p>
-        <div className="mt-6 flex space-x-4 justify-center">
-          <a href="https://www.linkedin.com/in/ellissong" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/icons/linkedin.svg"
-              alt="Linkedin"
-              width={24}
-              height={24}
-              className="hover:scale-110 transition-transform duration-300"
-            />
-          </a>
-          <a href="mailto:ellissong@gmail.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/icons/gmail.svg"
-              alt="Gmail"
-              width={24}
-              height={24}
-              className="hover:scale-110 transition-transform duration-300"
-            />
-          </a>
-          <a href="https://github.com/elsong86" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/icons/github.svg"
-              alt="GitHub"
-              width={24}
-              height={24}
-              className="hover:scale-110 transition-transform duration-300"
-            />
-          </a>
+      <Card>
+        <div className="relative flex flex-col items-center">
+          <Image
+            src="/profile.jpg"
+            alt="Profile picture"
+            width={400}
+            height={400}
+            className="w-full h-auto"
+          />
+          <p className={`mt-3 text-6xl ${hurricane.className}`}>
+            Ellis Song
+          </p>
+          <div className="mt-6 flex space-x-4 justify-center">
+            <a href="https://www.linkedin.com/in/ellissong" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/icons/linkedin.svg"
+                alt="Linkedin"
+                width={24}
+                height={24}
+                className="hover:scale-110 transition-transform duration-300"
+              />
+            </a>
+            <a href="mailto:ellissong@gmail.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/icons/gmail.svg"
+                alt="Gmail"
+                width={24}
+                height={24}
+                className="hover:scale-110 transition-transform duration-300"
+              />
+            </a>
+            <a href="https://github.com/elsong86" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/icons/github.svg"
+                alt="GitHub"
+                width={24}
+                height={24}
+                className="hover:scale-110 transition-transform duration-300"
+              />
+            </a>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </motion.div>
   );
 };
 
