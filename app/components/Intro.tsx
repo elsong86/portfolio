@@ -22,6 +22,9 @@ const Intro: React.FC = () => {
       id="intro"
       style={{ opacity }}
       className="h-screen flex"
+      transition={{
+        opacity: { duration: 0.8, ease: "easeInOut" }, // Apply transition here
+      }}
     >
       {/* Left Section: Primary Color Background with Text */}
       <div className="w-1/2 bg-primary flex flex-col justify-center p-10 text-secondary">

@@ -31,6 +31,9 @@ const Projects: React.FC = () => {
       id="projects"
       style={{ opacity }}
       className="py-32 bg-black text-black"
+      transition={{
+        opacity: { duration: 0.8, ease: "easeInOut" }, // Apply transition settings
+      }}
     >
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
