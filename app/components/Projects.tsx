@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
       ref={ref}
       id="projects"
       style={{ opacity }}
-      className="py-32 bg-black text-black"
+      className="min-h-screen py-32 bg-black text-black"
       transition={{
         opacity: { duration: 0.8, ease: "easeInOut" }, // Apply transition settings
       }}

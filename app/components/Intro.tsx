@@ -21,7 +21,7 @@ const Intro: React.FC = () => {
       ref={ref}
       id="intro"
       style={{ opacity }}
-      className="h-screen flex"
+      className="min-h-screen flex"
       transition={{
         opacity: { duration: 0.8, ease: "easeInOut" }, // Apply transition here
       }}
