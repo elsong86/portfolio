@@ -3,7 +3,6 @@ import AboutMe from './components/AboutMe';
 import Toolkit from './components/Toolkit';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
-import Navbar from './components/Navbar';
 
 // Helper function to extract the first image URL from the description
 const extractImageFromDescription = (description: string): string | null => {
@@ -57,12 +56,6 @@ export default async function Home() {
 
   return (
     <main className="p-0">
-       <div className="sticky top-0 z-50">
-        {/* Absolute Navbar positioned on top */}
-        <header className="absolute top-0 left-0 w-full flex justify-center">
-          <Navbar />
-        </header>
-      </div>
       <Intro />
       <Projects />
       <Toolkit />

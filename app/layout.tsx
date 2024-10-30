@@ -1,5 +1,6 @@
 import './globals.css';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export const metadata = {
   title: 'My Portfolio',
@@ -21,9 +22,18 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        {/* Main content takes up all available space */}
+        {/* Sticky Wrapper */}
+        <div className="sticky top-0 z-50">
+          {/* Absolute Navbar positioned on top */}
+          <header className="absolute top-0 left-0 w-full flex justify-center">
+            <Navbar />
+          </header>
+        </div>
+
+        {/* Main content */}
         <main className="flex-1">{children}</main>
-        {/* Footer at the bottom */}
+        
+        {/* Footer */}
         <Footer />
       </body>
     </html>
