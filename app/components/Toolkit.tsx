@@ -26,7 +26,7 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="toolkit" className="min-h-screen py-32 bg-secondary text-gray-900">
+    <section id="toolkit" className="min-h-screen py-32 text-white">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-10">My Toolkit</h2>
         <Card className="shadow-lg p-6 bg-white"> {/* Added padding inside the card */}

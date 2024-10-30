@@ -15,7 +15,7 @@ type MediumPost = {
 
 const Blog: React.FC<{ articles: MediumPost[] }> = ({ articles }) => {
   return (
-    <section id="blog" className="min-h-screen py-32 bg-gray-100 text-gray-900">
+    <section id="blog" className="py-32 bg-black text-white">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-10">Latest Blog Posts</h2>
         {/* Flexbox layout to center cards */}

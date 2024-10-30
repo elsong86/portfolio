@@ -21,38 +21,30 @@ const Intro: React.FC = () => {
       ref={ref}
       id="intro"
       style={{ opacity }}
-      className="min-h-screen flex"
+      className="min-h-screen flex items-center justify-center text-white"
       transition={{
-        opacity: { duration: 0.8, ease: "easeInOut" }, // Apply transition here
+        opacity: { duration: 0.8, ease: "easeInOut" },
       }}
     >
-      {/* Left Section: Primary Color Background with Text */}
-      <div className="w-1/2 bg-primary flex flex-col justify-center p-10 text-secondary">
-        <div className="container mx-auto">
-          <h2 className="text-6xl font-medium text-center lg:text-left mb-10">
-            Allow me to introduce myself...
-          </h2>
-          <p className="mt-8 text-lg text-center lg:text-left leading-relaxed">
+      <div className="container mx-auto flex flex-row items-center justify-between p-10">
+        {/* Left Section: Text Content */}
+        <div className="w-1/2 p-6">
+          <h2 className="text-6xl font-medium mb-6">Allow me to introduce myself...</h2>
+          <p className="mt-4 text-lg leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
-            tortor a lorem varius fermentum sit amet eget est. Phasellus non
-            purus vel lacus ultricies eleifend. Donec efficitur magna et nunc
-            lobortis, at faucibus odio interdum. Nullam faucibus, mauris et
-            facilisis vestibulum, ligula metus consequat elit, eget elementum
-            turpis lectus nec nulla. Suspendisse tincidunt scelerisque orci, sed
-            sodales purus malesuada nec.
+            tortor a lorem varius fermentum sit amet eget est. Phasellus non purus
+            vel lacus ultricies eleifend. Donec efficitur magna et nunc lobortis,
+            at faucibus odio interdum. Nullam faucibus, mauris et facilisis
+            vestibulum, ligula metus consequat elit, eget elementum turpis lectus
+            nec nulla. Suspendisse tincidunt scelerisque orci, sed sodales purus
+            malesuada nec.
           </p>
         </div>
-      </div>
 
-      {/* Right Section: Split Color Background for Profile Image */}
-      <div
-        className="w-1/2 flex justify-center items-center"
-        style={{
-          background:
-            "linear-gradient(to right, var(--primary) 50%, var(--tertiary) 50%)",
-        }}
-      >
-        <IntroCard />
+        {/* Right Section: IntroCard Component */}
+        <div className="w-1/2 flex justify-center">
+          <IntroCard />
+        </div>
       </div>
     </motion.section>
   );

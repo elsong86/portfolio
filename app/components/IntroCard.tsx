@@ -34,15 +34,15 @@ const IntroCard: React.FC = () => {
       ref={ref}
       animate={controls}
       initial={{ opacity: 0, y: 100 }} // Initial state
-      className="bg-white rounded-lg shadow-lg p-8 max-w-full mx-auto"
+      className="bg-white text-black rounded-lg shadow-lg max-w-full mx-auto"
     >
       <Card>
         <div className="relative flex flex-col items-center">
           <Image
             src="/profile.jpg"
             alt="Profile picture"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="w-full h-auto"
           />
           <p className={`mt-3 text-6xl ${hurricane.className}`}>
