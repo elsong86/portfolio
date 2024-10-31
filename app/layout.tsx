@@ -16,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Add the Devicon CDN link in the head */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
@@ -24,16 +23,16 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <BlobBackground />
-        {/* Sticky Wrapper */}
-        <div className="sticky top-0 z-50">
-          {/* Absolute Navbar positioned on top */}
-          <header className="absolute top-0 left-0 w-full flex justify-center">
+        
+        {/* Sticky Navbar */}
+        <header className="sticky top-0 z-50 w-full">
+          <div className="flex justify-center">
             <Navbar />
-          </header>
-        </div>
+          </div>
+        </header>
 
         {/* Main content */}
-        <main className="flex-1">{children}</main>
+        <main className="flex justify-center items-center min-h-screen">{children}</main>
         
         {/* Footer */}
         <Footer />
