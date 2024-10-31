@@ -24,18 +24,18 @@ const skills = [
   { name: 'Kubernetes', icon: '/icons/kubernetes.svg'}
 ];
 
-const Skills: React.FC = () => {
+const Toolkit: React.FC = () => {
   return (
-    <section id="toolkit" className="min-h-screen py-32 text-white">
+    <section id="toolkit" className="min-h-screen py-32 text-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-10">My Toolkit</h2>
-        <Card className="shadow-lg p-6 bg-white"> {/* Added padding inside the card */}
+        <h2 className="text-4xl font-bold text-left mb-10 pl-20">My Toolkit</h2>
+        <Card className="shadow-lg p-2 w-3/4 mx-auto"> {/* Added padding inside the card */}
           <CardContent>
-            <ul className="grid grid-cols-2 md:grid-cols-3 gap-8"> {/* Adjusted grid gap for equal spacing */}
+            <ul className="grid grid-cols-2 md:grid-cols-3 gap-2"> {/* Adjusted grid gap for equal spacing */}
               {skills.map((skill, index) => (
                 <li 
                   key={index} 
-                  className="flex flex-col items-center text-gray-700 text-xl p-4"> {/* Added padding for equal spacing */}
+                  className="flex flex-col items-center text-black text-xl p-4"> {/* Added padding for equal spacing */}
                   <Image
                     src={skill.icon}
                     alt={`${skill.name} logo`}
@@ -54,4 +54,4 @@ const Skills: React.FC = () => {
   );
 };
 
-export default Skills;
+export default Toolkit;

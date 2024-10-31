@@ -1,6 +1,7 @@
 import './globals.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import BlobBackground from './components/BlobBackground';
 
 export const metadata = {
   title: 'My Portfolio',
@@ -22,6 +23,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col min-h-screen">
+        <BlobBackground />
         {/* Sticky Wrapper */}
         <div className="sticky top-0 z-50">
           {/* Absolute Navbar positioned on top */}
