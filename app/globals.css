@@ -5,7 +5,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+  background: #2a3b5f
 }
 
 
@@ -28,8 +28,8 @@ section {
 
 @layer base {
   :root {
-    --primary: #5b6d92;
-    --secondary: #e0e2dc;
-    --tertiary: #a3b0ae; 
+    --primary: #4aa3a1;
+    --secondary: #4aa3a1;
+    --tertiary: #a8d1e6; 
   }
 }
